@@ -1,0 +1,187 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Documentation",
+        "description": "REST API for managing organizations, buildings, and activities.",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "/",
+            "description": "Local development server"
+        }
+    ],
+    "paths": {
+        "/api/organizations/building/{buildingId}": {
+            "get": {
+                "tags": [
+                    "Organizations"
+                ],
+                "summary": "Get organizations by building ID",
+                "operationId": "90adc34f4cc857506cc6ced3633723ed",
+                "parameters": [
+                    {
+                        "name": "buildingId",
+                        "in": "path",
+                        "description": "ID of the building",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of organizations"
+                    }
+                }
+            }
+        },
+        "/api/organizations/activity/{activityId}": {
+            "get": {
+                "tags": [
+                    "Organizations"
+                ],
+                "summary": "Get organizations by activity ID",
+                "operationId": "b0337a4e36d0bdc8a92b99dd308f3a3c",
+                "parameters": [
+                    {
+                        "name": "activityId",
+                        "in": "path",
+                        "description": "ID of the activity",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of organizations"
+                    }
+                }
+            }
+        },
+        "/api/organizations/radius": {
+            "get": {
+                "tags": [
+                    "Organizations"
+                ],
+                "summary": "Get organizations within a radius",
+                "operationId": "0eb36e73605f134c431183e26f513609",
+                "parameters": [
+                    {
+                        "name": "latitude",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        }
+                    },
+                    {
+                        "name": "longitude",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        }
+                    },
+                    {
+                        "name": "radius",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of organizations within the radius"
+                    }
+                }
+            }
+        },
+        "/api/organizations/{id}": {
+            "get": {
+                "tags": [
+                    "Organizations"
+                ],
+                "summary": "Get organization by ID",
+                "operationId": "5983e40a20bcca0b49a493b22cfe6ef2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Organization details"
+                    }
+                }
+            }
+        },
+        "/api/organizations/search": {
+            "get": {
+                "tags": [
+                    "Organizations"
+                ],
+                "summary": "Search organizations by name",
+                "operationId": "4f8950e62fc599998175fa446d5c4a94",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of organizations"
+                    }
+                }
+            }
+        },
+        "/api/organizations/activity/tree/{activityId}": {
+            "get": {
+                "tags": [
+                    "Organizations"
+                ],
+                "summary": "Get organizations by activity tree",
+                "operationId": "d11e3acf2f0b0babf0b739408d2c025d",
+                "parameters": [
+                    {
+                        "name": "activityId",
+                        "in": "path",
+                        "description": "ID of the activity tree",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of organizations"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Organizations"
+        }
+    ]
+}
