@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
 
         $activityFood = Activity::create(['name' => 'Food']);
         $activityMeat = Activity::create(['name' => 'Meat Products', 'parent_id' => $activityFood->id]);
+        $activityMeatChicken = Activity::create(['name' => 'Chicken', 'parent_id' => $activityMeat->id]);
         $activityDairy = Activity::create(['name' => 'Dairy Products', 'parent_id' => $activityFood->id]);
         $activityAutomobiles = Activity::create(['name' => 'Automobiles']);
         $activityCars = Activity::create(['name' => 'Cars', 'parent_id' => $activityAutomobiles->id]);
@@ -44,7 +45,7 @@ class DatabaseSeeder extends Seeder
 
         $organization2 = Organization::create([
             'name' => 'LLC “Auto World”',
-            'phone_numbers' => json_encode(['8-800-555-35-35']),
+            'phone_numbers' => json_encode(['8-800-555-35-35', '8-495-777-77-77']),
             'building_id' => $building2->id,
         ]);
 
